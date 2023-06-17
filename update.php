@@ -1,18 +1,14 @@
 <?php
         include 'connect.php' ; 
         $id = $_GET['updateid'] ;
-        
         $sql = "Select * from  `crud` where id=$id" ; 
         $result = mysqli_query($con,$sql) ; 
         $row = mysqli_fetch_assoc($result) ; 
-
         $id = $row['id'];
         $name = $row['name'];
         $email = $row['email'];
         $mobile = $row['mobile'];
         $passowrd = $row['password'];
-
-        
         if(isset($_POST['update'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
@@ -26,16 +22,9 @@
                         die(mysqli_error($con));
                 }
         }
-
 ?>
-
-
-
-
-
 <!doctype html>
 <html lang="en">
-
 <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -45,7 +34,6 @@
         <title>Crud Operations</title>
 </head>
 <body>
-
         <div class="container">
                 <form method="post">
                         <div class="form-group">
@@ -67,7 +55,5 @@
                         <button type="submit" name="update" class="btn btn-primary">Update</button>
                 </form>
         </div>
-
 </body>
-
 </html>
